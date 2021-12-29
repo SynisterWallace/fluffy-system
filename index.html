@@ -70,9 +70,11 @@
             Happy Birthday!
           </h1>
         </div>
+        <audio id="myAudio" src="audio/hapibidi.mp3"></audio>
         <div class="col-12 based-in" align="center">
-          <h2 class="size-based" style="font-size: 32px;">I wish you all the best!</h2>
-        </div>
+          <h2 class="size-based" style="font-size: 32px;">I wish you all the best! Here's a <a class="song" onClick="togglePlay()">song</a> for you</h2>
+        </div>       
+         
       </div>
     </div>
     <div class="container button-lets-work">
@@ -133,7 +135,7 @@
       <!--New row-->
       <div class="col-1"></div>
       <div class="col-6">
-        <h3 class="title-services">for the one and only that I really love</h3>
+        <h3 class="title-services">for the one that I really love</h3>
       </div>
 
       <!--Icon-->
@@ -261,7 +263,7 @@
           <p class="curious-message">Cuma dikit ya?</p>
         </div>
         <div class="col-12 d-flex justify-content-center visit-position">
-          <a target="_blank"><p class="visit-message">Kita cuma ketemu 2x tahun ini dan kita sibuk having fun berdua</p></a>
+          <a target="_blank"><p class="visit-message"><a href="https://drive.google.com/drive/folders/1yyjXd3odekNwU5V7ZwRR6YsxLcZ_dGHJ?usp=sharing">Kita</a> cuma ketemu 2x tahun ini dan kita sibuk having fun berdua</p></a>
         </div>
       </div>
     </div>
@@ -519,32 +521,38 @@
       }
       var ftrocketmeluncur = jQuery("#ft")[0] ? jQuery("#ft")[0] : jQuery(document.body)[0];
       var scrolltoprocketmeluncur = $('rocketmeluncur');
-  var viewPortHeightrocketmeluncur = parseInt(document.documentElement.clientHeight);
-  var scrollHeightrocketmeluncur = parseInt(document.body.getBoundingClientRect().top);
-  var basewrocketmeluncur = parseInt(ftrocketmeluncur.clientWidth);
-  var swrocketmeluncur = scrolltoprocketmeluncur.clientWidth;
-  if (basewrocketmeluncur < 1000) {
-  var leftrocketmeluncur = parseInt(fetchOffset(ftrocketmeluncur)['left']);
-  leftrocketmeluncur = leftrocketmeluncur < swrocketmeluncur ? leftrocketmeluncur * 2 - swrocketmeluncur : leftrocketmeluncur;
-  scrolltoprocketmeluncur.style.left = ( basewrocketmeluncur + leftrocketmeluncur ) + 'px';
-  } else {
-  scrolltoprocketmeluncur.style.left = 'auto';
-  scrolltoprocketmeluncur.style.right = '10px';
-  }
-  })
+      var viewPortHeightrocketmeluncur = parseInt(document.documentElement.clientHeight);
+      var scrollHeightrocketmeluncur = parseInt(document.body.getBoundingClientRect().top);
+      var basewrocketmeluncur = parseInt(ftrocketmeluncur.clientWidth);
+      var swrocketmeluncur = scrolltoprocketmeluncur.clientWidth;
+      if (basewrocketmeluncur < 1000) {
+      var leftrocketmeluncur = parseInt(fetchOffset(ftrocketmeluncur)['left']);
+      leftrocketmeluncur = leftrocketmeluncur < swrocketmeluncur ? leftrocketmeluncur * 2 - swrocketmeluncur : leftrocketmeluncur;
+      scrolltoprocketmeluncur.style.left = ( basewrocketmeluncur + leftrocketmeluncur ) + 'px';
+      } else {
+      scrolltoprocketmeluncur.style.left = 'auto';
+      scrolltoprocketmeluncur.style.right = '10px';
+      }
+      })
 
-  jQuery('#rocketmeluncur').click(function(){
-      jQuery("html, body").animate({ scrollTop: '0px',display:'none'},{
-              duration: 600,  
-              easing: 'linear'
-          });
-      
-      var self = this;
-      this.className += ' '+"launchrocket";
-      setTimeout(function(){
-        self.className = 'showrocket';
-      },800)
-  });
+      jQuery('#rocketmeluncur').click(function(){
+          jQuery("html, body").animate({ scrollTop: '0px',display:'none'},{
+                  duration: 600,  
+                  easing: 'linear'
+              });
+          
+          var self = this;
+          this.className += ' '+"launchrocket";
+          setTimeout(function(){
+            self.className = 'showrocket';
+          },800)
+      });
+
+      var myAudio = document.getElementById("myAudio");
+
+      function togglePlay() {
+        return myAudio.paused ? myAudio.play() : myAudio.pause();
+      };
 </script>
 
 
